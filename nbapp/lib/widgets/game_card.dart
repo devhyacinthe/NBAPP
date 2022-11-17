@@ -44,106 +44,108 @@ class _GameCardState extends State<GameCard> {
       child: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Card(
-            borderOnForeground: true,
-            elevation: 5,
-            color: secondaryColor,
-            child: SizedBox(
-                width: 300,
-                height: 200,
-                child: Column(
-                  children: [
-                    Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(splitDateAndTime(widget.dateTime!)[0],
-                              style: GoogleFonts.nunito(
-                                  textStyle: const TextStyle(
-                                      fontSize: 18, color: textColor))),
-                          Text(splitDateAndTime(widget.dateTime!)[1],
-                              style: GoogleFonts.nunito(
-                                  textStyle: const TextStyle(
-                                      fontSize: 18, color: textColor))),
-                          Column(
+          borderOnForeground: true,
+          elevation: 5,
+          color: Colors.white,
+          child: Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      opacity: 0.2,
+                      fit: BoxFit.cover,
+                      repeat: ImageRepeat.noRepeat,
+                      image: AssetImage('assets/images/nba.png'))),
+              child: Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                ),
+                child: SizedBox(
+                    width: 290,
+                    height: 150,
+                    child: Column(
+                      children: [
+                        Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                  widget.quarter == null
-                                      ? "None"
-                                      : 'QT${widget.quarter!}',
-                                  style: GoogleFonts.nunito(
+                              Text(splitDateAndTime(widget.dateTime!)[0],
+                                  style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
-                                          fontSize: 18,
-                                          color: Colors.greenAccent))),
-                              Text(
-                                  widget.timeRemainingMinutes == null
-                                      ? "00:00"
-                                      : '${widget.timeRemainingMinutes!}:${widget.timeRemainingSeconds!}',
-                                  style: GoogleFonts.nunito(
+                                          fontSize: 18, color: textColor))),
+                              Text(splitDateAndTime(widget.dateTime!)[1],
+                                  style: GoogleFonts.lato(
                                       textStyle: const TextStyle(
-                                          fontSize: 16,
-                                          color: Colors.greenAccent)))
-                            ],
-                          )
-                        ]),
-                    const SizedBox(height: 30),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(widget.homeTeam!,
-                                  style: GoogleFonts.amiko(
-                                      textStyle: const TextStyle(
-                                          fontSize: 35,
-                                          color: Colors.white,
-                                          letterSpacing: 2))),
-                              const SizedBox(width: 15),
-                              Text(
-                                  widget.homeTeamScore == null
-                                      ? "0"
-                                      : widget.homeTeamScore!.toString(),
-                                  style: GoogleFonts.nunito(
-                                      textStyle: const TextStyle(
-                                          fontSize: 32, color: textColor))),
-                              const SizedBox(width: 10),
-                              Text("VS",
-                                  style: GoogleFonts.nunito(
-                                      textStyle: const TextStyle(
-                                          fontSize: 20, color: textColor))),
-                              const SizedBox(width: 10),
-                              Text(
-                                  widget.awayTeamScore == null
-                                      ? "0"
-                                      : widget.awayTeamScore!.toString(),
-                                  style: GoogleFonts.nunito(
-                                      textStyle: const TextStyle(
-                                          fontSize: 32, color: textColor))),
-                              const SizedBox(width: 15),
-                              Text(widget.awayTeam!,
-                                  style: GoogleFonts.amiko(
-                                      textStyle: const TextStyle(
-                                          fontSize: 35, color: Colors.white)))
-                            ],
-                          ),
-                        )
+                                          fontSize: 18, color: textColor))),
+                              Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                      widget.quarter == null
+                                          ? "None"
+                                          : 'QT${widget.quarter!}',
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                              fontSize: 18, color: textColor))),
+                                  Text(
+                                      widget.timeRemainingMinutes == null
+                                          ? "00:00"
+                                          : '${widget.timeRemainingMinutes!}:${widget.timeRemainingSeconds!}',
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                              fontSize: 18, color: textColor)))
+                                ],
+                              )
+                            ]),
+                        const SizedBox(height: 22),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Center(
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(widget.homeTeam!,
+                                      style: GoogleFonts.aBeeZee(
+                                          textStyle: const TextStyle(
+                                              fontSize: 35,
+                                              color: Colors.black87,
+                                              letterSpacing: 2))),
+                                  const SizedBox(width: 15),
+                                  Text(
+                                      widget.homeTeamScore == null
+                                          ? "0"
+                                          : widget.homeTeamScore!.toString(),
+                                      style: GoogleFonts.nunito(
+                                          textStyle: const TextStyle(
+                                              fontSize: 30, color: textColor))),
+                                  const SizedBox(width: 15),
+                                  Text("VS",
+                                      style: GoogleFonts.lato(
+                                          textStyle: const TextStyle(
+                                              fontSize: 18, color: textColor))),
+                                  const SizedBox(width: 15),
+                                  Text(
+                                      widget.awayTeamScore == null
+                                          ? "0"
+                                          : widget.awayTeamScore!.toString(),
+                                      style: GoogleFonts.nunito(
+                                          textStyle: const TextStyle(
+                                              fontSize: 30, color: textColor))),
+                                  const SizedBox(width: 15),
+                                  Text(widget.awayTeam!,
+                                      style: GoogleFonts.aBeeZee(
+                                          textStyle: const TextStyle(
+                                              fontSize: 35,
+                                              color: Colors.black87)))
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 25),
                       ],
-                    ),
-                    const SizedBox(height: 30),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Center(
-                          child: Text(widget.channel!,
-                              style: GoogleFonts.nunito(
-                                  textStyle: const TextStyle(
-                                      fontSize: 20, color: textColor))),
-                        )
-                      ],
-                    )
-                  ],
-                ))),
+                    )),
+              )),
+        ),
       ),
     );
   }

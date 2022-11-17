@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nbapp/constants/colors.dart';
 
@@ -18,12 +19,27 @@ class _AppBarCustomState extends State<AppBarCustom> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: primaryColor,
-      elevation: 0,
+      backgroundColor: Colors.white,
+      leading: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image:
+                      AssetImage('assets/images/nba-logo-transparent.png')))),
+      elevation: 0.5,
+      toolbarHeight: 50,
       title: Text(widget.titleText,
-          style: GoogleFonts.nunito(
-              fontSize: 30, fontWeight: FontWeight.bold, color: textColor)),
+          style: GoogleFonts.archivo(
+              letterSpacing: 2,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              color: textColor)),
       centerTitle: true,
+      flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              color: primaryColor,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(25),
+                  bottomRight: Radius.circular(25)))),
     );
   }
 }
