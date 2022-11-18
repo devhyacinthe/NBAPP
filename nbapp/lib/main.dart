@@ -36,6 +36,6 @@ class MyApp extends StatelessWidget {
           '/news': (_) => const NewsPage(),
           '/teams': (_) => const TeamsPage(),
         },
-        home: const MainPage());
+        home: const SplashScreen());
   }
 }
