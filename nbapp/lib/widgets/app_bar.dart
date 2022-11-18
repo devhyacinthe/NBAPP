@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nbapp/constants/colors.dart';
 
@@ -16,9 +16,17 @@ class AppBarCustom extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarCustomState extends State<AppBarCustom> {
+
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      actions: [
+        IconButton(
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+            },
+            icon: const Icon(Icons.logout_outlined)),
+      ],
       backgroundColor: Colors.white,
       leading: Container(
           decoration: const BoxDecoration(

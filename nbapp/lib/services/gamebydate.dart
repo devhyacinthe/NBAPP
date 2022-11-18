@@ -4,11 +4,10 @@ import 'package:intl/intl.dart';
 
 import '../models/games.models.dart';
 
-
 class GameByDateApi {
   static Future<List<GamesModel>> getGamesByDate() async {
     final DateTime now = DateTime.now();
-    final later = now.subtract(const Duration(hours: 12));
+    final later = now.subtract(const Duration(hours: 9));
 
     final DateFormat formatter = DateFormat('y-MMM-d');
     final String formatted = formatter.format(later);

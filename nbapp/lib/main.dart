@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:nbapp/providers/news.provider.dart';
 import 'package:nbapp/providers/players.provider.dart';
@@ -7,7 +8,11 @@ import 'package:nbapp/screens/newsPage.screen.dart';
 import 'package:nbapp/screens/teamsPage.screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+import 'auth/main_page.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => TeamsProvider()),
@@ -31,6 +36,6 @@ class MyApp extends StatelessWidget {
           '/news': (_) => const NewsPage(),
           '/teams': (_) => const TeamsPage(),
         },
-        home: const HomePage());
+        home: const MainPage());
   }
 }

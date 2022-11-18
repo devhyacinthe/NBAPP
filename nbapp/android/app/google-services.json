@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "585525536604",
+    "project_id": "nbapp-c053f",
+    "storage_bucket": "nbapp-c053f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:585525536604:android:24fda77d6c0dbac8000399",
+        "android_client_info": {
+          "package_name": "com.example.nbapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "585525536604-orhgbbtp26tldcj8t3eiks7acoevgrmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAsZBK6qAndBAHXvPND5SLDfJ9wh4C-Mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "585525536604-orhgbbtp26tldcj8t3eiks7acoevgrmp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
