@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nbapp/widgets/app_bar.dart';
 import 'package:nbapp/widgets/bottom_bar.dart';
@@ -15,8 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  
-  
   List<GamesModel> _games = [];
 
   bool _isloading = true;

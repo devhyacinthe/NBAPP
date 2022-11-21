@@ -35,6 +35,8 @@ dependencies:
   firebase_core: ^2.3.0
   flutter:
     sdk: flutter
+  flutter_svg: ^1.1.6
+  get: ^4.6.5
   google_fonts: ^3.0.1
   http: ^0.13.5
   intl: ^0.17.0
@@ -62,7 +64,8 @@ flutter:
     - assets/images/nba2.png
     - assets/images/nba-logo.png
     - assets/images/nba-logo-transparent.png
-    - assets/icons/51971-hello.json
+    - assets/icons/
+    - assets/logos/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see

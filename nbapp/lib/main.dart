@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:nbapp/providers/news.provider.dart';
-import 'package:nbapp/providers/players.provider.dart';
+import 'package:get/get.dart';
 import 'package:nbapp/providers/teams.provider.dart';
 import 'package:nbapp/screens/homePage.screen.dart';
 import 'package:nbapp/screens/newsPage.screen.dart';
@@ -14,11 +13,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(
-    MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => TeamsProvider()),
-      ChangeNotifierProvider(create: (_) => PlayersProvider()),
-      ChangeNotifierProvider(create: (_) => NewsProvider())
-    ], child: const MyApp()),
+
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => TeamsProvider()),
+      ],
+      child: const MyApp(),
+    ),
   );
 }
 
@@ -28,8 +29,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'NBAPP',
+        darkTheme: ThemeData(),
         debugShowCheckedModeBanner: false,
         routes: {
           '/home': (_) => const HomePage(),

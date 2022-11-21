@@ -16,14 +16,13 @@ class AppBarCustom extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _AppBarCustomState extends State<AppBarCustom> {
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
       actions: [
         IconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
             },
             icon: const Icon(Icons.logout_outlined)),
       ],
@@ -37,10 +36,7 @@ class _AppBarCustomState extends State<AppBarCustom> {
       toolbarHeight: 50,
       title: Text(widget.titleText,
           style: GoogleFonts.archivo(
-              letterSpacing: 2,
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-              color: textColor)),
+              fontSize: 25, fontWeight: FontWeight.bold, color: textColor)),
       centerTitle: true,
       flexibleSpace: Container(
           decoration: const BoxDecoration(

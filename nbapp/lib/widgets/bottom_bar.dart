@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:nbapp/constants/colors.dart';
+import 'package:nbapp/screens/newsPage.screen.dart';
+
+import '../screens/teamsPage.screen.dart';
 
 class BottomBarCustom extends StatefulWidget implements PreferredSizeWidget {
   const BottomBarCustom({Key? key}) : super(key: key);
@@ -18,9 +23,9 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
     setState(() {
       _selectedIndex = index;
       if (_selectedIndex == 0) {
-        Navigator.pushNamed(context, '/teams');
+        Get.to(() => const TeamsPage(), transition: Transition.zoom);
       } else if (_selectedIndex == 2) {
-        Navigator.pushNamed(context, '/news');
+        Get.to(() => const NewsPage(), transition: Transition.zoom);
       }
     });
   }
@@ -28,6 +33,7 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      elevation: 5,
       items: const [
         BottomNavigationBarItem(
             icon: Icon(Icons.graphic_eq_outlined), label: "Teams"),
@@ -37,8 +43,7 @@ class _BottomBarCustomState extends State<BottomBarCustom> {
             icon: Icon(Icons.newspaper_outlined), label: "News"),
       ],
       currentIndex: _selectedIndex,
-      elevation: 2,
-      backgroundColor: primaryColor,
+      backgroundColor: Colors.white,
       selectedItemColor: secondaryColor,
       onTap: _onTapped,
       selectedLabelStyle: const TextStyle(color: secondaryColor),
