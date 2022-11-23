@@ -106,9 +106,9 @@ class _GameCardState extends State<GameCard> {
                                   Text(widget.homeTeam!,
                                       style: GoogleFonts.aBeeZee(
                                           textStyle: const TextStyle(
-                                              fontSize: 35,
+                                              fontSize: 27,
                                               color: Colors.black87,
-                                              letterSpacing: 2))),
+                                              ))),
                                   const SizedBox(width: 15),
                                   Text(
                                       widget.homeTeamScore == null
@@ -116,7 +116,7 @@ class _GameCardState extends State<GameCard> {
                                           : widget.homeTeamScore!.toString(),
                                       style: GoogleFonts.nunito(
                                           textStyle: const TextStyle(
-                                              fontSize: 30, color: textColor))),
+                                              fontSize: 23, color: textColor))),
                                   const SizedBox(width: 15),
                                   Text("VS",
                                       style: GoogleFonts.lato(
@@ -129,12 +129,12 @@ class _GameCardState extends State<GameCard> {
                                           : widget.awayTeamScore!.toString(),
                                       style: GoogleFonts.nunito(
                                           textStyle: const TextStyle(
-                                              fontSize: 30, color: textColor))),
+                                              fontSize: 23, color: textColor))),
                                   const SizedBox(width: 15),
                                   Text(widget.awayTeam!,
                                       style: GoogleFonts.aBeeZee(
                                           textStyle: const TextStyle(
-                                              fontSize: 35,
+                                              fontSize: 27,
                                               color: Colors.black87)))
                                 ],
                               ),

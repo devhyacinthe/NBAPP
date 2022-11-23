@@ -1,3 +1,12 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
-}
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.suggest.insertMode": "replace",
+    "editor.linkedEditing": true,
+    "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
+
+} 
