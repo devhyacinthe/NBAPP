@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nbapp/providers/teams.provider.dart';
+import 'package:nbapp/providers/players.provider.dart';
 import 'package:nbapp/screens/homePage.screen.dart';
 import 'package:nbapp/screens/newsPage.screen.dart';
 import 'package:nbapp/screens/teamsPage.screen.dart';
@@ -17,6 +18,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => TeamsProvider()),
+        ChangeNotifierProvider(create: (_) => PlayersProvider()),
       ],
       child: const MyApp(),
     ),

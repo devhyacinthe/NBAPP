@@ -6,9 +6,9 @@ import 'package:nbapp/providers/teams.provider.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
-
+import '../constants/colors.dart';
 import '../constants/logo.dart';
-
+import '../widgets/players_tile.dart';
 
 // ignore: must_be_immutable
 class TeamsDetails extends StatefulWidget {
@@ -30,46 +30,50 @@ class _TeamsDetailsState extends State<TeamsDetails> {
       builder: (context, value, child) {
         if (teamsProvider.teams.isNotEmpty) {
           return Scaffold(
-              appBar: AppBar(
-                elevation: 1,
-                toolbarHeight: 50,
-                centerTitle: true,
-                title: Text('${teamsProvider.getTeamsByIndex(widget.index).name}',
-                    style: GoogleFonts.aBeeZee(fontSize: 32)),
-                leading: GestureDetector(
-                  child: const Icon(Icons.arrow_back),
-                  onTap: () {
-                    Get.back();
-                  },
-                ),
-                actions: [
-                  IconButton(
-                      onPressed: () {
-                        FirebaseAuth.instance.signOut();
-                      },
-                      icon: const Icon(Icons.logout_outlined)),
-                ],
-              ),
-              body: Container(
-                  width: 400,
-                  height: 250,
+            appBar: AppBar(
+              elevation: 1,
+              toolbarHeight: 50,
+              centerTitle: true,
+              flexibleSpace: Container(
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          opacity: .8,
-                          image: AssetImage('assets/images/nba.png'),
-                          fit: BoxFit.cover),
+                      color: primaryColor,
                       borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(90),
-                          bottomRight: Radius.circular(90))),
-                  child: Center(
-                    child: SizedBox(
-                        width: 200,
-                        height: 200,
-                        child: CircleAvatar(
-                          backgroundColor: Colors.transparent,
-                          backgroundImage: AssetImage('${logos[widget.index]}'),
-                        )),
-                 )));
+                          bottomLeft: Radius.circular(25),
+                          bottomRight: Radius.circular(25)))),
+              title: Center(
+                child: Row(children: [
+                  SizedBox(
+                    height: 50,
+                    width: 50,
+                    child: CircleAvatar(
+                      backgroundColor: Colors.transparent,
+                      backgroundImage: AssetImage('${logos[widget.index]}'),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Text('${teamsProvider.getTeamsByIndex(widget.index).name}',
+                      style: GoogleFonts.aBeeZee(fontSize: 32))
+                ]),
+              ),
+              leading: GestureDetector(
+                child: const Icon(Icons.arrow_back),
+                onTap: () {
+                  Get.back();
+                },
+              ),
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      FirebaseAuth.instance.signOut();
+                    },
+                    icon: const Icon(Icons.logout_outlined)),
+              ],
+            ),
+            body: PlayersTile(
+                keys: teamsProvider.getTeamsByIndex(widget.index).key!),
+          );
         }
         return const Center(
           child: Text("Server Error"),
