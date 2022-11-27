@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'NBAPP',
-        darkTheme: ThemeData(),
+        
         debugShowCheckedModeBanner: false,
         routes: {
           '/home': (_) => const HomePage(),
